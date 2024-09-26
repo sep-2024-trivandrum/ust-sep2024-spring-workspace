@@ -2,6 +2,8 @@ package com.demo.department_service.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +23,8 @@ public class DepartmentController {
 
 	DepartmentService deptService;
 	
+	public static final Logger LOG = LoggerFactory.getLogger(DepartmentController.class);
+	
 	@Autowired
 	public DepartmentController(DepartmentService deptService) {
 		this.deptService = deptService;
@@ -28,26 +32,31 @@ public class DepartmentController {
 	
 	@GetMapping("/departments")
 	public List<DepartmentPojo> getAllDpartments(){
+		LOG.info("in getAllDepartments()");
 		return deptService.getAllDepartments();
 	}
 	
 	@GetMapping("/departments/{did}")
 	public DepartmentPojo getADepartment(@PathVariable("did") long deptId) {
+		LOG.info("in getADepartment()");
 		return deptService.getADepartment(deptId);
 	}
 	
 	@PostMapping("/departments")
 	public DepartmentPojo addDepartment(@RequestBody DepartmentPojo newDept) {
+		LOG.info("in addDepartment()");
 		return deptService.addDepartment(newDept);
 	}
 	
 	@PutMapping("/departments")
 	public DepartmentPojo updateDepartment(@RequestBody DepartmentPojo editDept) {
+		LOG.info("in updateDepartment()");
 		return deptService.updateDepartment(editDept);
 	}
 	
 	@DeleteMapping("/departments/{did}")
 	public void removeDepartment(@PathVariable("did") long deptId) {
+		LOG.info("in removeDepartment()");
 		deptService.deleteDepartment(deptId);
 	}
 }

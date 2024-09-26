@@ -1,0 +1,5 @@
+package com.demo.department_service.dao.entity;
+
+public class DepartmentEntity {
+
+}

@@ -1,0 +1,28 @@
+package com.demo.department_service.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.demo.department_service.model.DepartmentPojo;
+import com.demo.department_service.service.DepartmentService;
+
+@RestController
+@RequestMapping("/api")
+public class DepartmentController {
+
+	DepartmentService deptService;
+	
+	@Autowired
+	public DepartmentController(DepartmentService deptService) {
+		this.deptService = deptService;
+	}
+	
+	@GetMapping("/departments")
+	public List<DepartmentPojo> getAllDpartments(){
+		
+	}
+}

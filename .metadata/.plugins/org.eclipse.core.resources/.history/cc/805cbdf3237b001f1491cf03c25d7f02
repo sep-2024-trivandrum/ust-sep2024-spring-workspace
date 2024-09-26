@@ -1,0 +1,43 @@
+package com.demo.department_service.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.demo.department_service.model.DepartmentPojo;
+
+@Service
+public class DepartmentServiceImpl implements DepartmentService{
+
+	DepartmentRepository deptRepo;
+	
+	
+	@Override
+	public List<DepartmentPojo> getAllDepartments() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DepartmentPojo getADepartment(int deptId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DepartmentPojo addDepartment(DepartmentPojo newDepPojo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DepartmentPojo updateDepartment(DepartmentPojo editDepPojo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteDepartment(int deptId) {
+			
+	}
+}

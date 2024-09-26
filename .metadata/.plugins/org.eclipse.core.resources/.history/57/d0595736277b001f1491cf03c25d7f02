@@ -1,0 +1,6 @@
+package com.demo.department_service.controller;
+@RestController
+@RequestMapping("/api")
+public class DepartmentController {
+
+}

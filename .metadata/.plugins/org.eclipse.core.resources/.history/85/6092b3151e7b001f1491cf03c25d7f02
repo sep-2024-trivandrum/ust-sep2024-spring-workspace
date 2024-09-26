@@ -1,0 +1,7 @@
+package com.demo.department_service.dao.entity;
+
+@Entity
+@Table(name="department_details")
+public class DepartmentEntity {
+
+}

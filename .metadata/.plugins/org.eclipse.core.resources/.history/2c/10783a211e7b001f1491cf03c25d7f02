@@ -1,0 +1,10 @@
+package com.demo.department_service.dao.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="department_details")
+public class DepartmentEntity {
+
+}

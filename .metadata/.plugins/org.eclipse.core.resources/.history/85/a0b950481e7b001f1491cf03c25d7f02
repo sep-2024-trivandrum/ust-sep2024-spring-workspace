@@ -1,0 +1,16 @@
+package com.demo.department_service.dao.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+
+@Entity
+@Table(name="department_details")
+public class DepartmentEntity {
+
+}

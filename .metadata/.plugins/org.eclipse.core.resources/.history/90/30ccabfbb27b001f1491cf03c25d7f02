@@ -1,0 +1,7 @@
+spring.application.name=department-service
+
+server.port=8081
+spring.h2.console.enabled=true
+
+management.endpoints.web.exposure.include=*
+management.endpoint.health.show-details=always

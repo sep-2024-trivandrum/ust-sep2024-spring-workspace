@@ -1,0 +1,5 @@
+spring.application.name=department-service
+
+server.port=8081
+
+

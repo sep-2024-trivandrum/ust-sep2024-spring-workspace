@@ -1,0 +1,8 @@
+package com.demo.department_service.model;
+
+public class DepartmentPojo {
+
+	private long deptId;
+	private String deptName;
+	
+}

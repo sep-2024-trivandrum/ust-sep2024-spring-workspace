@@ -1,0 +1,5 @@
+package com.demo.department_service.service;
+@Service
+public class DepartmentServiceImpl implements DepartmentService{
+
+}

@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestClient;
 
 import com.demo.department_service.model.DepartmentPojo;
+import com.demo.department_service.model.EmployeePojo;
 import com.demo.department_service.service.DepartmentService;
 
 @RestController
@@ -39,7 +41,15 @@ public class DepartmentController {
 	@GetMapping("/departments/{did}")
 	public DepartmentPojo getADepartment(@PathVariable("did") long deptId) {
 		LOG.info("in getADepartment()");
-		return deptService.getADepartment(deptId);
+		DepartmentPojo deptPojo = deptService.getADepartment(deptId);
+		RestClient restClient = RestClient.create();
+		List<EmployeePojo> allEmps = restClient
+			.get()
+			.uri("http://localhost:8082/api/employees/departments/" + deptId)
+			.retrieve()
+			.body(List.class);
+		deptPojo.setAllEmployees(allEmps);
+		return deptPojo;
 	}
 	
 	@PostMapping("/departments")

@@ -1328,3 +1328,13 @@ java.util.concurrent.TimeoutException
 	at org.eclipse.lsp4e.operations.hover.LSPTextHover.getHoverInfo(LSPTextHover.java:76)
 	at org.eclipse.ui.internal.genericeditor.hover.CompositeTextHover.getHoverInfo2(CompositeTextHover.java:60)
 	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.egit.core 4 0 2024-09-28 17:33:23.121
+!MESSAGE Connecting Git team provider failed. See log for details.
+!SUBENTRY 1 org.eclipse.egit.core 4 0 2024-09-28 17:33:23.126
+!MESSAGE Error connecting project .m2eclipse_refactoring, no Git repositories found
+
+!ENTRY org.eclipse.egit.core 4 0 2024-09-28 17:34:24.622
+!MESSAGE Connecting Git team provider failed. See log for details.
+!SUBENTRY 1 org.eclipse.egit.core 4 0 2024-09-28 17:34:24.629
+!MESSAGE Error connecting project .m2eclipse_refactoring, no Git repositories found

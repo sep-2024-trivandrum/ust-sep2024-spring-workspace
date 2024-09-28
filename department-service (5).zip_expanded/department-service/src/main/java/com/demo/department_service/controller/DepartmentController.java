@@ -19,6 +19,8 @@ import com.demo.department_service.model.DepartmentPojo;
 import com.demo.department_service.model.EmployeePojo;
 import com.demo.department_service.service.DepartmentService;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+
 @RestController
 @RequestMapping("/api")
 public class DepartmentController {
@@ -39,6 +41,7 @@ public class DepartmentController {
 	}
 	
 	@GetMapping("/departments/{did}")
+	@CircuitBreaker(name="ciremp", fallbackMethod = "empFallBack")
 	public DepartmentPojo getADepartment(@PathVariable("did") long deptId) {
 		LOG.info("in getADepartment()");
 		DepartmentPojo deptPojo = deptService.getADepartment(deptId);
@@ -50,6 +53,10 @@ public class DepartmentController {
 			.body(List.class);
 		deptPojo.setAllEmployees(allEmps);
 		return deptPojo;
+	}
+	
+	public DepartmentPojo empFallBack() {
+		return new DepartmentPojo(0, "fallback", null);
 	}
 	
 	@PostMapping("/departments")

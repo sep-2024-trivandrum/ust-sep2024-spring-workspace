@@ -48,7 +48,7 @@ public class DepartmentController {
 		RestClient restClient = RestClient.create();
 		List<EmployeePojo> allEmps = restClient
 			.get()
-			.uri("http://localhost:8082/api/employees/departments/" + deptId)
+			.uri("http://employee-sr:8082/api/employees/departments/" + deptId)
 			.retrieve()
 			.body(List.class);
 		deptPojo.setAllEmployees(allEmps);

@@ -32,6 +32,7 @@ public class UserCredentialsController {
 		return userCredService.register(user);
 	}
 
+	// http://_________:8090/api/auth/validate/token?token=dhfgygrfyu374hghfg
 	@GetMapping("/validate/token")
 	public boolean validateToken(@RequestParam String token) {
 		return userCredService.verifyToken(token);
